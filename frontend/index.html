@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FleetFlow Transportation</title>
+<link rel="stylesheet" href="css/styles.css">
+<style>
+body{background:var(--panel)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.hdr{position:sticky;top:0;z-index:10;background:var(--panel);border-bottom:1px solid var(--border)}
+.hdr .wrap{display:flex;align-items:center;gap:22px;height:64px}
+.hdr .brand{color:var(--text);padding:0;font-size:17px;text-decoration:none}
+.hdr nav{display:flex;gap:20px;flex:1}
+.hdr nav a{color:var(--muted);text-decoration:none;font-weight:500}
+.hdr nav a:hover{color:var(--text)}
+a.btn{text-decoration:none;display:inline-block}
+.crumb{font-size:12px;color:var(--muted);padding:14px 0 0}
+.hero{background:var(--side);color:var(--side-text)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding-top:64px;padding-bottom:64px}
+.hero .eyebrow{color:#93c5fd;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:12px}
+.hero h1{color:#fff;font-size:40px;line-height:1.12;margin:10px 0 14px;max-width:15em}
+.hero p{font-size:16px;max-width:36em;margin:0 0 22px}
+.hero .row .btn{padding:10px 16px;font-weight:600}
+.hero .ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
+.phone{margin-top:22px;font-size:13px}
+.phone b{color:#fff;font-size:18px;display:block}
+.board{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:18px}
+.board h3{color:#fff;margin:0 0 12px;font-size:13px;display:flex;align-items:center;gap:8px}
+.board .live i{background:#4ade80}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:rgba(255,255,255,.05);border-radius:10px;padding:12px}
+.stat b{display:block;color:#fff;font-size:26px}
+.stat span{font-size:12px}
+section.blk{padding:60px 0;border-bottom:1px solid var(--border)}
+section.blk.alt{background:var(--bg)}
+.blk h2{font-size:26px;margin:0 0 8px}
+.blk .lead{color:var(--muted);max-width:44em;margin:0 0 26px;font-size:15px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:center}
+.svc h3{font-size:15px;margin:0 0 6px}
+.svc p{margin:0;color:var(--muted);font-size:13.5px}
+.svc .ico{margin-bottom:10px}
+.ticks{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:10px}
+.ticks li{padding-left:26px;position:relative}
+.ticks li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:700}
+.vals{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.val{border-top:3px solid var(--accent);padding-top:12px}
+.val b{display:block;margin-bottom:4px}
+.val span{color:var(--muted);font-size:13px}
+.cta{background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;padding:48px 0}
+.cta .wrap{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.cta h2{margin:0;font-size:24px;flex:1;min-width:260px}
+.cta .btn{padding:10px 16px;font-weight:600;border-color:transparent}
+.ftr{background:var(--side);color:var(--side-text);padding:40px 0 24px;font-size:13px}
+.ftr .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}
+.ftr h4{color:#fff;margin:0 0 10px;font-size:13px}
+.ftr a{color:inherit;text-decoration:none;display:block;margin:6px 0}
+.ftr a:hover{color:#fff}
+.ftr .legal{border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:16px;font-size:12px}
+@media (max-width:900px){
+  .hdr nav{display:none}.hdr .wrap{justify-content:space-between}
+  .hero .wrap,.g2{grid-template-columns:1fr}.hero h1{font-size:30px}
+  .g3{grid-template-columns:1fr}.vals{grid-template-columns:1fr 1fr}.ftr .cols{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+<header class="hdr"><div class="wrap">
+  <a class="brand" href="./"><span class="logo" style="color:#fff">T</span>FleetFlow</a>
+  <nav aria-label="Main">
+    <a href="#what">What we do</a><a href="#services">Services</a><a href="#portal">Customer portal</a><a href="#dispatch">Dispatch</a><a href="#safety">Safety</a><a href="#values">Values</a>
+  </nav>
+  <span id="authBtns" class="row">
+    <a class="btn" href="login.html">Sign in</a>
+    <a class="btn p" href="login.html#register">Create account</a>
+  </span>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div>
+    <div class="eyebrow">Transportation</div>
+    <h1>Truckload freight, planned and tracked from pickup to proof of delivery.</h1>
+    <p>FleetFlow runs its own trucks and drivers across the central and southern United States, and gives every customer a portal to book loads, follow them on the map and settle invoices.</p>
+    <div class="row">
+      <a class="btn p" href="login.html#register">Create a portal account</a>
+      <a class="btn ghost" href="login.html">Sign in</a>
+    </div>
+    <div class="phone">Central dispatch, day or night<b>(800) 555-0142</b></div>
+  </div>
+  <div class="board" aria-label="Live operations figures">
+    <h3><span class="live on"><i></i></span>Operations right now</h3>
+    <div class="stats">
+      <div class="stat"><b id="sTrucks">–</b><span>trucks in the fleet</span></div>
+      <div class="stat"><b id="sDrivers">–</b><span>company drivers</span></div>
+      <div class="stat"><b id="sActive">–</b><span>loads on the road</span></div>
+      <div class="stat"><b id="sCities">–</b><span>cities served</span></div>
+    </div>
+    <div class="small" style="margin-top:10px">Figures come straight from the dispatch database.</div>
+  </div>
+</div></section>
+
+<main>
+<section class="blk" id="what"><div class="wrap g2">
+  <div>
+    <h2>What we do</h2>
+    <p class="lead" style="margin-bottom:14px">We are an asset-based carrier: the tractors, trailers and drivers are ours, so the people who plan your load are the people who haul it.</p>
+    <p class="muted">When a lane falls outside our own network, our logistics desk arranges vetted partner carriers and keeps the same tracking and paperwork in one place.</p>
+  </div>
+  <div class="card">
+    <h3>One load, six clear stages</h3>
+    <div class="tl" style="margin:8px 0 6px">
+      <div class="st done">Booked</div><div class="st done">Planned</div><div class="st done">Dispatched</div><div class="st cur done">In Transit</div><div class="st">Delivered</div><div class="st">Invoiced</div>
+    </div>
+    <p class="muted small" style="margin:0">Every stage is visible in the portal, with the driver, truck and documents attached.</p>
+  </div>
+</div></section>
+
+<section class="blk alt" id="services"><div class="wrap">
+  <h2>Services</h2>
+  <p class="lead">Equipment matched to the product, with one dispatcher accountable for the load.</p>
+  <div class="g3">
+    <div class="card svc"><div class="ico info">▭</div><h3>Dry van</h3><p>53-foot vans for packaged and palletised goods, retail distribution and paper products.</p></div>
+    <div class="card svc"><div class="ico info">❄</div><h3>Refrigerated</h3><p>Temperature-controlled trailers for food and beverage, with seal numbers recorded at pickup.</p></div>
+    <div class="card svc"><div class="ico info">▬</div><h3>Flatbed</h3><p>48-foot flatbeds for building materials and other freight that loads from the side or top.</p></div>
+    <div class="card svc"><div class="ico info">▽</div><h3>Bulk hopper</h3><p>Hopper trailers for grain and other dry bulk moving between elevators, co-ops and processors.</p></div>
+    <div class="card svc"><div class="ico info">★</div><h3>Dedicated trucks</h3><p>Drivers and equipment assigned to your business alone, for customers who want the same faces every week.</p></div>
+    <div class="card svc"><div class="ico info">⇄</div><h3>Logistics management</h3><p>Planning, carrier selection and EDI (204, 990, 214, 210) handled for you across our partner network.</p></div>
+  </div>
+</div></section>
+
+<section class="blk" id="portal"><div class="wrap g2">
+  <div>
+    <h2>Online customer portal</h2>
+    <p class="lead" style="margin-bottom:16px">Register once and run your freight from the browser.</p>
+    <ul class="ticks">
+      <li>Enter orders, or send them by EDI load tender</li>
+      <li>Follow each truck on the map with a live ETA</li>
+      <li>Message the driver and see bills of lading and proof of delivery</li>
+      <li>Review invoices, open balances and payments</li>
+    </ul>
+    <div class="row"><a class="btn p" href="login.html#register">Create account</a><a class="btn" href="login.html">Sign in</a></div>
+  </div>
+  <div class="card">
+    <h3>How to get started</h3>
+    <div class="list">
+      <div class="it"><div class="ico ok">1</div><div><b>Create an account</b><div class="muted small">Name, work email and a password.</div></div></div>
+      <div class="it"><div class="ico ok">2</div><div><b>Sign in</b><div class="muted small">You land on the operations dashboard.</div></div></div>
+      <div class="it"><div class="ico ok">3</div><div><b>Book your first load</b><div class="muted small">Orders → New order, then watch it move.</div></div></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="blk alt" id="dispatch"><div class="wrap g2">
+  <div>
+    <h2>Central dispatch</h2>
+    <p class="lead" style="margin-bottom:14px">One dispatch floor plans every load, checks driver hours before assigning, and watches for late trucks, missing paperwork and equipment faults.</p>
+    <p><b>(800) 555-0142</b> <span class="muted">· staffed around the clock</span></p>
+  </div>
+  <div class="card svc" id="fleet">
+    <div class="ico info">⚙</div><h3>Fleet service centers</h3>
+    <p>Our own shops handle preventive maintenance and repairs on tractors and trailers. Fault codes reported by the truck reach the shop before the driver does.</p>
+  </div>
+</div></section>
+
+<section class="blk" id="safety"><div class="wrap g2">
+  <div>
+    <h2>Safety</h2>
+    <p class="lead" style="margin-bottom:0">Electronic logs track every driver's hours of service. Dispatch sees the hours remaining before a load is assigned, and the system warns when a trip needs more drive time than the driver has left.</p>
+  </div>
+  <div class="card">
+    <h3>Hours-of-service limits we plan around</h3>
+    <div class="hb"><span>Driving</span><div class="bar ok"><i style="width:100%"></i></div><b>11h</b></div>
+    <div class="hb"><span>On-duty shift</span><div class="bar ok"><i style="width:100%"></i></div><b>14h</b></div>
+    <div class="hb"><span>8-day cycle</span><div class="bar ok"><i style="width:100%"></i></div><b>70h</b></div>
+  </div>
+</div></section>
+
+<section class="blk alt" id="values"><div class="wrap">
+  <h2>What we hold ourselves to</h2>
+  <p class="lead">Five commitments behind every load.</p>
+  <div class="vals">
+    <div class="val"><b>Safe miles</b><span>No delivery is worth an unsafe shift.</span></div>
+    <div class="val"><b>The customer's clock</b><span>We plan to your appointment, not ours.</span></div>
+    <div class="val"><b>Disciplined operations</b><span>Every exception has an owner and a fix.</span></div>
+    <div class="val"><b>On time</b><span>Late loads are flagged while there is still time to act.</span></div>
+    <div class="val"><b>The right equipment</b><span>Trailer and driver chosen for the product.</span></div>
+  </div>
+</div></section>
+</main>
+
+<section class="cta"><div class="wrap">
+  <h2>Ready to move a load?</h2>
+  <a class="btn" href="login.html#register">Create account</a>
+  <a class="btn ghost" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.5)" href="login.html">Sign in to the portal</a>
+</div></section>
+
+<footer class="ftr"><div class="wrap">
+  <div class="cols">
+    <div><div class="brand" style="padding:0 0 10px"><span class="logo">T</span>FleetFlow</div>Central dispatch (800) 555-0142<br>dispatch@fleetflow.example</div>
+    <div><h4>Company</h4><a href="#what">What we do</a><a href="#services">Services</a><a href="#values">Values</a></div>
+    <div><h4>Operations</h4><a href="#dispatch">Central dispatch</a><a href="#fleet">Fleet service centers</a><a href="#safety">Safety</a></div>
+    <div><h4>Customers</h4><a href="login.html">Sign in</a><a href="login.html#register">Create account</a><a href="#portal">Portal features</a></div>
+  </div>
+  <div class="legal">Demonstration project. FleetFlow is a fictional company; contact details are placeholders.</div>
+</div></footer>
+
+<script>
+const set=(id,v)=>{document.getElementById(id).textContent=v;};
+fetch("api/public/stats").then(r=>r.json()).then(s=>{set("sTrucks",s.trucks);set("sDrivers",s.drivers);set("sActive",s.active);set("sCities",s.cities);}).catch(()=>{});
+fetch("api/auth/me").then(r=>r.ok?r.json():null).then(u=>{
+  if(!u)return;
+  const box=document.getElementById("authBtns");box.textContent="";
+  const who=document.createElement("span");who.className="muted small";who.textContent="Signed in as "+u.name;
+  const go=document.createElement("a");go.className="btn p";go.href="app.html";go.textContent="Open dashboard";
+  box.append(who,go);
+}).catch(()=>{});
+</script>
+</body>
+</html>

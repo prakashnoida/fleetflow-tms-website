@@ -1,0 +1,577 @@
+{
+ "cities": {
+  "Chicago, IL": [
+   41.88,
+   -87.63
+  ],
+  "Dallas, TX": [
+   32.78,
+   -96.8
+  ],
+  "Atlanta, GA": [
+   33.75,
+   -84.39
+  ],
+  "Los Angeles, CA": [
+   34.05,
+   -118.24
+  ],
+  "Denver, CO": [
+   39.74,
+   -104.99
+  ],
+  "Memphis, TN": [
+   35.15,
+   -90.05
+  ],
+  "Columbus, OH": [
+   39.96,
+   -83
+  ],
+  "Phoenix, AZ": [
+   33.45,
+   -112.07
+  ],
+  "Kansas City, MO": [
+   39.1,
+   -94.58
+  ],
+  "Nashville, TN": [
+   36.16,
+   -86.78
+  ],
+  "Houston, TX": [
+   29.76,
+   -95.37
+  ],
+  "Charlotte, NC": [
+   35.23,
+   -80.84
+  ],
+  "Indianapolis, IN": [
+   39.77,
+   -86.16
+  ],
+  "Omaha, NE": [
+   41.26,
+   -95.94
+  ],
+  "Salt Lake City, UT": [
+   40.76,
+   -111.89
+  ],
+  "Seattle, WA": [
+   47.6,
+   -122.33
+  ],
+  "Minneapolis, MN": [
+   44.98,
+   -93.27
+  ],
+  "St. Louis, MO": [
+   38.63,
+   -90.2
+  ],
+  "Laredo, TX": [
+   27.5,
+   -99.5
+  ],
+  "Jacksonville, FL": [
+   30.33,
+   -81.66
+  ]
+ },
+ "customers": [
+  "Northwind Foods",
+  "Bluestem Beverages",
+  "Granite Building Supply",
+  "Harbor Paper Co.",
+  "Summit Retail DC",
+  "Prairie Grain Co-op"
+ ],
+ "ediCustomers": [
+  "Bluestem Beverages",
+  "Summit Retail DC",
+  "Harbor Paper Co."
+ ],
+ "drivers": [
+  {
+   "id": "D-01",
+   "name": "Marcus Reed",
+   "truck": "T-1041",
+   "status": "Driving",
+   "drive": 6.5,
+   "shift": 8,
+   "cycle": 41,
+   "loc": "Chicago, IL",
+   "phone": "(312) 555-0147"
+  },
+  {
+   "id": "D-02",
+   "name": "Alicia Gomez",
+   "truck": "T-1044",
+   "status": "Driving",
+   "drive": 3,
+   "shift": 4.5,
+   "cycle": 52,
+   "loc": "Houston, TX",
+   "phone": "(713) 555-0112"
+  },
+  {
+   "id": "D-03",
+   "name": "Samuel Okafor",
+   "truck": "T-1047",
+   "status": "Available",
+   "drive": 11,
+   "shift": 14,
+   "cycle": 30,
+   "loc": "Atlanta, GA",
+   "phone": "(404) 555-0190"
+  },
+  {
+   "id": "D-04",
+   "name": "Jenna Kowalski",
+   "truck": "T-1049",
+   "status": "Off Duty",
+   "drive": 11,
+   "shift": 14,
+   "cycle": 58,
+   "loc": "Indianapolis, IN",
+   "phone": "(317) 555-0133"
+  },
+  {
+   "id": "D-05",
+   "name": "Ravi Patel",
+   "truck": "T-1052",
+   "status": "On Duty",
+   "drive": 9.5,
+   "shift": 12,
+   "cycle": 35,
+   "loc": "Dallas, TX",
+   "phone": "(214) 555-0178"
+  },
+  {
+   "id": "D-06",
+   "name": "Tom Brennan",
+   "truck": "T-1055",
+   "status": "Driving",
+   "drive": 1.5,
+   "shift": 2.5,
+   "cycle": 63,
+   "loc": "Denver, CO",
+   "phone": "(303) 555-0121"
+  },
+  {
+   "id": "D-07",
+   "name": "Keisha Lawson",
+   "truck": "T-1058",
+   "status": "Available",
+   "drive": 10,
+   "shift": 13,
+   "cycle": 44,
+   "loc": "Memphis, TN",
+   "phone": "(901) 555-0165"
+  },
+  {
+   "id": "D-08",
+   "name": "Diego Herrera",
+   "truck": "T-1060",
+   "status": "Sleeper",
+   "drive": 11,
+   "shift": 14,
+   "cycle": 22,
+   "loc": "Phoenix, AZ",
+   "phone": "(602) 555-0109"
+  }
+ ],
+ "trucks": [
+  {
+   "id": "T-1041",
+   "unit": "2023 Freightliner Cascadia",
+   "motive": "MV-88231",
+   "odo": 412880,
+   "fuel": 68,
+   "fault": null
+  },
+  {
+   "id": "T-1044",
+   "unit": "2022 Kenworth T680",
+   "motive": "MV-88240",
+   "odo": 388120,
+   "fuel": 41,
+   "fault": "SPN 3226 – NOx sensor (low)"
+  },
+  {
+   "id": "T-1047",
+   "unit": "2024 Volvo VNL 760",
+   "motive": "MV-88257",
+   "odo": 98110,
+   "fuel": 90,
+   "fault": null
+  },
+  {
+   "id": "T-1049",
+   "unit": "2021 Peterbilt 579",
+   "motive": "MV-88262",
+   "odo": 501440,
+   "fuel": 77,
+   "fault": null
+  },
+  {
+   "id": "T-1052",
+   "unit": "2023 International LT",
+   "motive": null,
+   "odo": 220905,
+   "fuel": 83,
+   "fault": null
+  },
+  {
+   "id": "T-1055",
+   "unit": "2022 Freightliner Cascadia",
+   "motive": "MV-88270",
+   "odo": 356700,
+   "fuel": 22,
+   "fault": "SPN 100 – Oil pressure (warn)"
+  },
+  {
+   "id": "T-1058",
+   "unit": "2024 Kenworth T680",
+   "motive": "MV-88274",
+   "odo": 61230,
+   "fuel": 95,
+   "fault": null
+  },
+  {
+   "id": "T-1060",
+   "unit": "2023 Volvo VNL 860",
+   "motive": "MV-88281",
+   "odo": 174300,
+   "fuel": 59,
+   "fault": null
+  }
+ ],
+ "loads": [
+  {
+   "id": "LD-24101",
+   "cust": "Northwind Foods",
+   "o": "Chicago, IL",
+   "d": "Dallas, TX",
+   "pu": "Nov 13, 06:00",
+   "del": "Nov 14, 14:00",
+   "status": "In Transit",
+   "driver": "D-01",
+   "equip": "53' Reefer",
+   "weight": 38500,
+   "rate": 2850,
+   "prog": 0.42,
+   "pod": false,
+   "late": false
+  },
+  {
+   "id": "LD-24102",
+   "cust": "Bluestem Beverages",
+   "o": "Houston, TX",
+   "d": "Memphis, TN",
+   "pu": "Nov 13, 08:00",
+   "del": "Nov 13, 22:00",
+   "status": "In Transit",
+   "driver": "D-02",
+   "equip": "53' Dry Van",
+   "weight": 42000,
+   "rate": 1650,
+   "prog": 0.71,
+   "pod": false,
+   "late": false
+  },
+  {
+   "id": "LD-24103",
+   "cust": "Granite Building Supply",
+   "o": "Denver, CO",
+   "d": "Kansas City, MO",
+   "pu": "Nov 12, 20:00",
+   "del": "Nov 13, 12:00",
+   "status": "In Transit",
+   "driver": "D-06",
+   "equip": "48' Flatbed",
+   "weight": 44000,
+   "rate": 1900,
+   "prog": 0.86,
+   "pod": false,
+   "late": true
+  },
+  {
+   "id": "LD-24104",
+   "cust": "Summit Retail DC",
+   "o": "Atlanta, GA",
+   "d": "Charlotte, NC",
+   "pu": "Nov 14, 07:00",
+   "del": "Nov 14, 15:00",
+   "status": "Booked",
+   "driver": null,
+   "equip": "53' Dry Van",
+   "weight": 31000,
+   "rate": 980,
+   "prog": 0,
+   "pod": false,
+   "late": false
+  },
+  {
+   "id": "LD-24105",
+   "cust": "Harbor Paper Co.",
+   "o": "Memphis, TN",
+   "d": "Columbus, OH",
+   "pu": "Nov 14, 09:00",
+   "del": "Nov 15, 08:00",
+   "status": "Booked",
+   "driver": null,
+   "equip": "53' Dry Van",
+   "weight": 40500,
+   "rate": 1720,
+   "prog": 0,
+   "pod": false,
+   "late": false
+  },
+  {
+   "id": "LD-24106",
+   "cust": "Prairie Grain Co-op",
+   "o": "Omaha, NE",
+   "d": "Minneapolis, MN",
+   "pu": "Nov 14, 05:00",
+   "del": "Nov 14, 16:00",
+   "status": "Booked",
+   "driver": null,
+   "equip": "53' Hopper",
+   "weight": 45000,
+   "rate": 1250,
+   "prog": 0,
+   "pod": false,
+   "late": false
+  },
+  {
+   "id": "LD-24107",
+   "cust": "Northwind Foods",
+   "o": "Indianapolis, IN",
+   "d": "Nashville, TN",
+   "pu": "Nov 14, 10:00",
+   "del": "Nov 14, 19:00",
+   "status": "Planned",
+   "driver": "D-04",
+   "equip": "53' Reefer",
+   "weight": 36000,
+   "rate": 1150,
+   "prog": 0,
+   "pod": false,
+   "late": false
+  },
+  {
+   "id": "LD-24108",
+   "cust": "Summit Retail DC",
+   "o": "Dallas, TX",
+   "d": "Laredo, TX",
+   "pu": "Nov 13, 14:00",
+   "del": "Nov 14, 02:00",
+   "status": "Dispatched",
+   "driver": "D-05",
+   "equip": "53' Dry Van",
+   "weight": 29000,
+   "rate": 1100,
+   "prog": 0,
+   "pod": false,
+   "late": false,
+   "dispatchErr": true
+  },
+  {
+   "id": "LD-24098",
+   "cust": "Bluestem Beverages",
+   "o": "St. Louis, MO",
+   "d": "Chicago, IL",
+   "pu": "Nov 11, 08:00",
+   "del": "Nov 11, 17:00",
+   "status": "Delivered",
+   "driver": "D-01",
+   "equip": "53' Dry Van",
+   "weight": 41000,
+   "rate": 1350,
+   "prog": 1,
+   "pod": true,
+   "late": false
+  },
+  {
+   "id": "LD-24097",
+   "cust": "Granite Building Supply",
+   "o": "Phoenix, AZ",
+   "d": "Denver, CO",
+   "pu": "Nov 10, 06:00",
+   "del": "Nov 11, 10:00",
+   "status": "Delivered",
+   "driver": "D-06",
+   "equip": "48' Flatbed",
+   "weight": 43000,
+   "rate": 2400,
+   "prog": 1,
+   "pod": false,
+   "late": false
+  },
+  {
+   "id": "LD-24095",
+   "cust": "Harbor Paper Co.",
+   "o": "Columbus, OH",
+   "d": "Atlanta, GA",
+   "pu": "Nov 09, 07:00",
+   "del": "Nov 10, 09:00",
+   "status": "Invoiced",
+   "driver": "D-03",
+   "equip": "53' Dry Van",
+   "weight": 39000,
+   "rate": 1980,
+   "prog": 1,
+   "pod": true,
+   "late": false,
+   "inv": {
+    "no": "INV-50311",
+    "st": "Open",
+    "due": "Dec 10"
+   }
+  },
+  {
+   "id": "LD-24093",
+   "cust": "Northwind Foods",
+   "o": "Salt Lake City, UT",
+   "d": "Los Angeles, CA",
+   "pu": "Nov 08, 05:00",
+   "del": "Nov 09, 06:00",
+   "status": "Invoiced",
+   "driver": "D-08",
+   "equip": "53' Reefer",
+   "weight": 37500,
+   "rate": 2650,
+   "prog": 1,
+   "pod": true,
+   "late": false,
+   "inv": {
+    "no": "INV-50308",
+    "st": "Paid",
+    "due": "Dec 09"
+   }
+  },
+  {
+   "id": "LD-24091",
+   "cust": "Summit Retail DC",
+   "o": "Jacksonville, FL",
+   "d": "Atlanta, GA",
+   "pu": "Nov 07, 08:00",
+   "del": "Nov 07, 16:00",
+   "status": "Invoiced",
+   "driver": "D-07",
+   "equip": "53' Dry Van",
+   "weight": 33000,
+   "rate": 890,
+   "prog": 1,
+   "pod": true,
+   "late": false,
+   "inv": {
+    "no": "INV-50302",
+    "st": "Paid",
+    "due": "Dec 07"
+   }
+  }
+ ],
+ "logs": [
+  {
+   "t": "08:02:11",
+   "sys": "Motive",
+   "dir": "IN",
+   "type": "Location ping",
+   "ref": "LD-24101",
+   "st": "Success",
+   "msg": "GET /vehicle_locations – 3 vehicles updated"
+  },
+  {
+   "t": "08:05:40",
+   "sys": "EDI",
+   "dir": "IN",
+   "type": "204 Load Tender",
+   "ref": "LD-24104",
+   "st": "Success",
+   "msg": "Tender from Summit Retail DC accepted; 990 sent"
+  },
+  {
+   "t": "08:09:03",
+   "sys": "Motive",
+   "dir": "OUT",
+   "type": "Dispatch",
+   "ref": "LD-24108",
+   "st": "Error",
+   "msg": "POST /v2/dispatches rejected – truck T-1052 has no Motive vehicle mapping",
+   "fix": "map"
+  },
+  {
+   "t": "08:12:27",
+   "sys": "Motive",
+   "dir": "IN",
+   "type": "HOS sync",
+   "ref": "—",
+   "st": "Error",
+   "msg": "GET /hours_of_service 403 – OAuth scope for HOS not granted",
+   "fix": "scope"
+  },
+  {
+   "t": "08:15:55",
+   "sys": "Motive",
+   "dir": "IN",
+   "type": "Document",
+   "ref": "LD-24097",
+   "st": "Error",
+   "msg": "POD image received with load ref 'LD24097' – no matching load",
+   "fix": "doc"
+  },
+  {
+   "t": "08:18:30",
+   "sys": "Accounting",
+   "dir": "OUT",
+   "type": "Invoice export",
+   "ref": "LD-24095",
+   "st": "Success",
+   "msg": "INV-50311 posted to ERP"
+  },
+  {
+   "t": "08:21:14",
+   "sys": "Motive",
+   "dir": "IN",
+   "type": "Geofence event",
+   "ref": "LD-24102",
+   "st": "Success",
+   "msg": "Departed shipper – Houston, TX"
+  },
+  {
+   "t": "08:24:02",
+   "sys": "Mileage",
+   "dir": "OUT",
+   "type": "Route miles",
+   "ref": "LD-24106",
+   "st": "Success",
+   "msg": "Practical miles calculated"
+  }
+ ],
+ "msgs": {
+  "LD-24101": [
+   {
+    "me": false,
+    "text": "Loaded and rolling. Seal #448120.",
+    "t": "06:41"
+   },
+   {
+    "me": true,
+    "text": "Thanks Marcus. Receiver wants a call 1 hr out.",
+    "t": "06:45"
+   }
+  ],
+  "LD-24103": [
+   {
+    "me": false,
+    "text": "Snow on I-70, running about 90 min behind.",
+    "t": "07:58"
+   }
+  ]
+ }
+}
