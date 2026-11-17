@@ -18,6 +18,7 @@ def connect():
 
 def init_db(reset=False):
     """Create tables if needed; load the sample data when the database is empty."""
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)  # e.g. a mounted volume at /data
     con = connect()
     try:
         build(con, reset)
