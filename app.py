@@ -9,6 +9,7 @@ Standard library only: run with  `python app.py`  (Python 3.9+), then open http:
 import argparse
 import json
 import mimetypes
+import os
 import re
 import sys
 import threading
@@ -69,9 +70,10 @@ PAYMENT_ROUTES = [
 ]
 
 
-def session_cookie(token, max_age=auth.SESSION_SECONDS):
-    """HttpOnly: page scripts cannot read it. SameSite=Lax: other sites cannot send it with a POST."""
-    return f"session={token}; Path=/; HttpOnly; SameSite=Lax; Max-Age={max_age}"
+def session_cookie(token, max_age=auth.SESSION_SECONDS, secure=False):
+    """HttpOnly: page scripts cannot read it. SameSite=Lax: other sites cannot send it with a POST.
+    Secure (HTTPS only) whenever the request came in over HTTPS, e.g. behind Railway's proxy."""
+    return f"session={token}; Path=/; HttpOnly; SameSite=Lax; Max-Age={max_age}" + ("; Secure" if secure else "")
 
 
 def run(fn, *args):
@@ -134,17 +136,20 @@ class Handler(BaseHTTPRequestHandler):
         except Exception as e:  # unexpected: report it rather than dropping the connection
             self.send_json({"error": f"Server error: {e}"}, 500)
 
+    def https(self):
+        return (self.headers.get("X-Forwarded-Proto") or "").split(",")[0].strip().lower() == "https"
+
     def auth_route(self, method, path, body, token):
         if (method, path) == ("POST", "/api/auth/register"):
             user, new_token = run(auth.register, body)
-            return self.send_json(user, 201, cookie=session_cookie(new_token))
+            return self.send_json(user, 201, cookie=session_cookie(new_token, secure=self.https()))
         if (method, path) == ("POST", "/api/auth/login"):
             user, new_token = run(auth.login, body)
-            return self.send_json(user, cookie=session_cookie(new_token))
+            return self.send_json(user, cookie=session_cookie(new_token, secure=self.https()))
         if (method, path) == ("POST", "/api/auth/logout"):
             if token:
                 run(auth.logout, token)
-            return self.send_json({"ok": True}, cookie=session_cookie("", 0))
+            return self.send_json({"ok": True}, cookie=session_cookie("", 0, secure=self.https()))
         if (method, path) == ("GET", "/api/auth/me"):
             user = run(auth.current_user, token)
             return self.send_json(user) if user else self.send_json({"error": "Please sign in"}, 401)
@@ -224,8 +229,9 @@ class Handler(BaseHTTPRequestHandler):
 
 def main():
     parser = argparse.ArgumentParser(description="FleetFlow TMS server")
-    parser.add_argument("--port", type=int, default=8000)
-    parser.add_argument("--host", default="127.0.0.1")
+    # On a host such as Railway, PORT is set and the server must listen on all interfaces.
+    parser.add_argument("--port", type=int, default=int(os.environ.get("PORT") or 8000))
+    parser.add_argument("--host", default=os.environ.get("HOST") or ("0.0.0.0" if os.environ.get("PORT") else "127.0.0.1"))
     parser.add_argument("--reset", action="store_true", help="wipe the database and reload the sample data")
     args = parser.parse_args()
 
@@ -234,7 +240,8 @@ def main():
     gateways = [n for n, on in (("PayPal", payments.paypal_enabled()), ("Razorpay", payments.razorpay_enabled())) if on]
     print("Payment gateways: " + (", ".join(gateways) if gateways else "none configured (see .env.example)"))
     server = ThreadingHTTPServer((args.host, args.port), Handler)
-    print(f"FleetFlow TMS running at http://localhost:{args.port}   (database: {db.DB_PATH.name}, Ctrl+C to stop)")
+    print(f"FleetFlow TMS running at http://{'localhost' if args.host == '127.0.0.1' else args.host}:{args.port}   (database: {db.DB_PATH.name}, Ctrl+C to stop)")
+    sys.stdout.flush()
     try:
         server.serve_forever()
     except KeyboardInterrupt:
